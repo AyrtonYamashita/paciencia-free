@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <title>Paciência Spider</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="hud">
+    <div class="stat"><small>Pontos</small><span id="score">500</span></div>
+    <div class="stat"><small>Jogadas</small><span id="moves">0</span></div>
+    <div class="stat"><small>Tempo</small><span id="time">0:00</span></div>
+  </header>
+
+  <main id="board"></main>
+
+  <nav id="bar">
+    <button id="menu-btn">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span>
+    </button>
+    <button id="hint-btn">
+      <svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>Dica</span>
+    </button>
+    <button id="undo-btn">
+      <svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg><span>Desfazer</span>
+    </button>
+  </nav>
+
+  <dialog id="menu">
+    <h2 tabindex="-1" autofocus>Paciência Spider</h2>
+    <p class="label">Novo jogo</p>
+    <div class="modes">
+      <button data-mode="1"><span class="fan"><i>♠</i></span>1 naipe</button>
+      <button data-mode="2"><span class="fan"><i style="rotate:-8deg">♠</i><i class="r" style="rotate:8deg">♥</i></span>2 naipes</button>
+      <button data-mode="4"><span class="fan"><i style="rotate:-15deg">♠</i><i class="r" style="rotate:-5deg">♥</i><i style="rotate:5deg">♣</i><i class="r" style="rotate:15deg">♦</i></span>4 naipes</button>
+    </div>
+    <button id="restart-btn" class="wide">Reiniciar esta partida</button>
+    <button id="stats-btn" class="wide ghost">Estatísticas</button>
+    <button id="close-menu" class="wide ghost">Continuar</button>
+  </dialog>
+
+  <dialog id="stats">
+    <h2>Estatísticas</h2>
+    <div id="stats-body"></div>
+    <button class="wide" data-close>Fechar</button>
+  </dialog>
+
+  <dialog id="win">
+    <h2>Você venceu</h2>
+    <p id="win-text"></p>
+    <button id="win-new" class="wide">Jogar de novo</button>
+    <button class="wide ghost" data-close>Fechar</button>
+  </dialog>
+
+  <div id="toast"></div>
+
+  <script src="js/game.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
