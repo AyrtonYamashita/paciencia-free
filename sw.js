@@ -1,5 +1,5 @@
 // Stale-while-revalidate: plays offline, picks up new versions on the next launch.
-const CACHE = 'spider-v6';
+const CACHE = 'spider-v7';
 const ASSETS = [
   './', 'index.html', 'style.css', 'js/game.js', 'js/storage.js', 'js/ui.js',
   'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
